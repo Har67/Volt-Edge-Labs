@@ -1,0 +1,67 @@
+# 1011 Sequence Detector using Mealy and Moore FSM
+
+This project implements and verifies a 1011 sequence detector using both
+Mealy and Moore Finite State Machines in Verilog.
+
+The objective is to compare architectural behavior and verify correctness
+using self-checking testbenches with pass/fail reporting.
+
+---
+
+## Design Description
+
+- **Mealy FSM**
+  - Output depends on current state and input
+  - Output asserted in the same clock cycle
+
+- **Moore FSM**
+  - Output depends only on current state
+  - Output asserted one clock cycle later
+
+Overlapping sequence detection is supported in both designs.
+
+---
+
+## Verilog Design Files
+
+- [Mealy FSM Design](design/seq_1011_mealy.v)
+- [Moore FSM Design](design/seq_1011_moore.v)
+
+---
+
+## Self-Checking Testbenches
+
+The testbenches automatically verify functionality and report PASS/FAIL
+using assertion-style checks.
+
+- [Mealy FSM Testbench](testbench/tb_seq_1011_mealy_selfcheck.v)
+- [Moore FSM Testbench](testbench/tb_seq_1011_moore_selfcheck.v)
+
+---
+
+## Lab Results (Simulation Proof)
+
+### Mealy FSM
+- Successful compilation
+- Self-checking testbench reports PASS
+
+![Mealy Compile](lab_results/mealy_compile.png)
+![Mealy PASS](lab_results/mealy_pass.png)
+
+### Moore FSM
+- Successful compilation
+- Self-checking testbench reports PASS
+
+![Moore Compile](lab_results/moore_compile.png)
+![Moore PASS](lab_results/moore_pass.png)
+
+---
+
+## Tools Used
+- Icarus Verilog (iverilog)
+- GTKWave
+- Ubuntu Linux
+
+---
+
+
