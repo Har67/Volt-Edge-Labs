@@ -1,0 +1,29 @@
+Testbench Development – Self-Checking Testbench
+
+A testbench is a verification environment used to validate the functional correctness of a design under test (DUT).
+In this work, a self-checking testbench is developed for both Mealy and Moore FSM implementations of the 1011 sequence detector.
+A self-checking testbench automatically applies input stimulus to the FSM and internally compares the actual output with the expected output. This eliminates the need for manual waveform inspection and improves verification reliability.
+
+Use of Assertions for Pass/Fail Reporting
+
+Assertions are verification checks used to confirm whether the design behaves as expected.
+In the self-checking testbench, assertion-style checks are implemented using conditional statements.
+If the DUT output matches the expected value, the testbench reports PASS.
+If the DUT output does not match the expected value, the testbench reports FAIL.
+This mechanism ensures that any functional error is immediately detected and reported during simulation.
+
+Mealy vs Moore Testbench Consideration
+
+For the Mealy FSM, the output is asserted in the same clock cycle as the final input bit of the sequence.
+For the Moore FSM, the output is asserted one clock cycle later, since the output depends only on the current state.
+Therefore, separate self-checking testbenches are used to account for the difference in output timing between the two FSM types.
+
+Advantages of a Self-Checking Testbench
+
+Automatically verifies functionality
+Reduces manual effort and human error
+Provides clear PASS/FAIL results
+
+
+
+Commonly used in industry-level design verification
